@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+
+</head>
+<style>
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+</style>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+
+    <nav class="bg-blue-600 text-white py-4 fixed w-full top-0 left-0 z-10">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-2xl font-bold">Restro</a>
+            <div class="block lg:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="menu" class="nav-menu hidden lg:flex lg:space-x-20">
+                <li><a href="#hero" class="hover:underline">Home</a></li>
+                <li><a href="#services" class="hover:underline">Services</a></li>
+                <li><a href="#about" class="hover:underline">About Us</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+            <div class="hidden lg:block">
+                <a href="#" class="nav-btn cursor-pointer bg-slate-100 px-8 pt-2 pb-2 rounded-lg font-semibold text-blue-500">Login</a>
+            </div>
+        </div>
+        
+    </nav>
+     
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-blue-600 text-white z-20 transform translate-x-full transition-transform">
+        <div class="flex justify-end p-4">
+            <button id="close-menu" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col items-center space-y-6 mt-12">
+            <a href="#hero" class="text-lg hover:underline">Home</a>
+            <a href="#services" class="text-lg hover:underline">Services</a>
+            <a href="#about" class="text-lg hover:underline">About Us</a>
+            <a href="#contact" class="text-lg hover:underline">Contact</a>
+            <div class="mt-6">
+                <div class="nav-btn cursor-pointer bg-slate-100 px-8 pt-2 pb-2 rounded-lg font-semibold text-blue-500">Login</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-blue-500 text-white h-screen flex items-center mt-6 bg-cover bg-center opacity-90" style="background-image: url('images/food-overlay.jpg');">
+        <div class="container mx-auto flex">
+            <!-- Content Section -->
+            <div class="w-full md:w-1/2 px-6 lg:px-12 py-16 mx-11 my-12	 text-center md:text-left ">
+                <h1 class="text-5xl font-bold mb-4 uppercase">Welcome to Our Restaurant</h1>
+                <p class="text-lg mb-8">We provide top-notch services to help you succeed.</p>
+                <a href="#contact" class="bg-white hover:bg-sky-700 text-blue-500 py-3 px-6 rounded-full font-semibold hover:bg-gray-100">Get in Touch</a>
+            </div>
+            <!-- Image Section -->
+            <div class="hidden md:block w-full md:w-1/2">
+                <img src="images/pngwing.com.png" alt="Restaurant Image" class="w-80 h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 -mt-28">
+        <div class="container mx-auto px-4 text-center ">
+            <!-- <h2 class="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Our Services</h2> -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+                <div class="bg-white p-2 pb-10 rounded-lg shadow-lg  ">
+                    <img src="../public/images/bg1 (1).jpg" alt="" class="w-full rounded-md transition-transform transform hover:brightness-110 hover:contrast-125 cursor-pointer	 ">
+                    <h3 class="text-xl font-semibold mb-4 pt-6">Hamburger</h3>
+                    <p>The original and most well-known burger</p>
+                    <button class="px-6 py-3 mt-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-transform transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">Read More</button>
+                </div>
+                <div class="bg-white p-2 pb-10 rounded-lg shadow-lg">
+                    <img src="../public/images/bg 2.jpg" alt="" class="w-full rounded-md transition-transform transform hover:brightness-110 hover:transition-colors cursor-pointer	 ">
+                    <h3 class="text-xl font-semibold mb-4 pt-6">Turkey burger</h3>
+                    <p>Inspired by the turkey sandwich</p>
+                    <button class="px-6 py-3 mt-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-transform transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">Read More</button>
+                </div>
+                <div class="bg-white p-2 pb-10 rounded-lg shadow-lg">
+                    <img src="../public/images/bg3.jpg" alt="" class="w-full rounded-md	transition-transform transform hover:brightness-110 hover:contrast-125 cursor-pointer ">
+                    <h3 class="text-xl font-semibold mb-4 pt-6">Classic burger</h3>
+                    <p>A staple of Australian cuisine</p>
+                    <button class="px-6 py-3 mt-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-transform transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- About Us Section -->
+<section id="about" class="py-16 bg-gray-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-4">
+        <!-- Image on the Left -->
+        <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <img src="../public/images/res.jpg" alt="About Us Image" class="rounded-lg shadow-lg w-full object-cover">
+        </div>
+        <!-- Content on the Right -->
+        <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left bg-gradient-to-tr">
+            <h2 class="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">About Us</h2>
+            <p class="text-lg mb-4">
+                We are a passionate team dedicated to offering the best dining experience. From our carefully crafted
+                dishes to our outstanding service, we strive to make every visit unforgettable. Whether you're joining
+                us for a quick bite or a special occasion, we're committed to providing quality food and a welcoming
+                atmosphere.
+            </p>
+            <p class="text-lg">
+                With years of experience in the culinary world, our chefs prepare meals with the freshest ingredients,
+                and our staff ensures every guest feels at home. We look forward to serving you soon! Lorem ipsum dolor sit 
+                amet consectetur adipisicing elit. Dolorem id iste necessitatibus! Accusantium cum nisi sint repellendus maiores
+                 quisquam voluptatibus, in adipisci, vitae commodi molestiae laborum corrupti ipsum culpa voluptas esse labore.
+                  Maiores ullam animi quos ad suscipit, impedit tempore dolorum exercitationem commodi fugit doloribus, repellendus
+                   sequi, distinctio fuga voluptates! vitae commodi molestiae laborum corrupti ipsum culpa voluptas esse labore.
+                   Maiores ullam animi quos ad suscipit, impedit tempore dolorum exercitationem commodi fugit doloribus, repellendus
+                    sequi, distinctio fuga voluptates! 
+            </p>
+            <button class="px-6 py-3 mt-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-transform transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 ">Read More</button>
+            
+        </div>
+    </div>
+</section>
+
+
+ <!-- testimonial  Section start -->
+ <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+    <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+    <div class="mx-auto max-w-2xl lg:max-w-4xl">
+       <h2 class="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-center mb-8">Our Testimonials</h2>
+      <!-- <img class="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt=""> -->
+  
+      <!-- Swiper Slider Container -->
+      <div class="swiper-container mt-10">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <figure class="text-center">
+              <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
+              </blockquote>
+              <figcaption class="mt-10">
+                <img class="mx-auto h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                  <div class="font-semibold text-gray-900">Judith Black</div>
+                  <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                  <div class="text-gray-600">CEO of Workcation</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+  
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <figure class="text-center">
+              <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
+              </blockquote>
+              <figcaption class="mt-10">
+                <img class="mx-auto h-10 w-10 rounded-full" src="../public/images/Testimonial.png" alt="">
+                <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                  <div class="font-semibold text-gray-900">John Doe</div>
+                  <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                  <div class="text-gray-600">team leader </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <figure class="text-center">
+              <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
+              </blockquote>
+              <figcaption class="mt-10">
+                <img class="mx-auto h-10 w-10 rounded-full" src="../public/images/Testimonial.png" alt="">
+                <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                  <div class="font-semibold text-gray-900">John Doe</div>
+                  <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                  <div class="text-gray-600">team leader </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+  
+          <!-- Add more slides here -->
+        </div>
+  
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+<!-- testimonial  Section end -->
+
+     <section id="parallax-section" class="relative h-96 bg-center bg-cover bg-no-repeat bg-fixed " style="background-image: url('../public/images/parallax.webp');">
+         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+         <div class="relative z-10 flex items-center justify-center h-full">
+           <div class="text-center text-white">
+            <h2 class="text-4xl font-bold mb-4 ">Welcome to Our Company</h2>
+            <p class="text-lg">Providing the best services since 1990</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- <section id="hero" class="w-full h-screen flex items-center justify-center text-white">
+        <div class="flex w-full h-full">
+            
+            <div class="w-full md:w-1/2 h-full flex items-center justify-center">
+                <img src="images/menu.png" alt="Restaurant Image" class="w-full h-full">
+            </div>
+        </div>
+        
+    </section> -->
+
+    <section>
+        <div class="image">
+            <img src="../public/images/menu.png" alt="" class="rounded-xl">
+        </div>
+    </section>
+    
+    
+
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="flex flex-wrap -mx-4">
+                <!-- Contact Form -->
+                <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-md" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-md" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-md" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-500 text-white py-2 px-6 rounded-full font-semibold hover:bg-blue-600 w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Map -->
+                <div class="w-full lg:w-1/2 px-4">
+                    <div class="w-full h-96 rounded-lg shadow-md overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345096113!2d144.96315791565113!3d-37.81410774202185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d1281f2082a1!2sMelbourne%20CBD%2C%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1633709633765!5m2!1sen!2sus" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: About Us -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">About Us</h3>
+                    
+                    <p class="text-gray-400">We are committed to providing the best experience with our delicious range of burgers. Our mission is to offer quality food with exceptional service.</p>
+                    
+                </div>
+    
+                <!-- Column 2: Quick Links -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="hover:underline" ><i class="fa-solid fa-arrows-left-right"></i> Home</a></li>
+                        <li><a href="#services" class="hover:underline"><i class="fa-solid fa-arrows-left-right"></i> Services</a></li>
+                        <li><a href="#about" class="hover:underline"><i class="fa-solid fa-arrows-left-right"></i> About Us</a></li>
+                        <li><a href="#contact" class="hover:underline"><i class="fa-solid fa-arrows-left-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Contact Information -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-400 "><i class="fa-solid fa-location-dot"></i> 123 Burger Street, Food City, FC 12345</p>
+                    <p class="text-gray-400 pt-2"><i class="fa-solid fa-mobile-screen-button"></i> Phone: <a href="tel:+91-8964083396" > +91-8964083396</a>
+                    <p class="text-gray-400 pt-2 "><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:info@example.com" class="hover:underline"> info@example.com</a></p>
+                </div>
+    
+                <!-- Column 4: Follow Us -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/yourpage" target="_blank" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h12zM12 7v5h-2V9H8V7h2V6a4 4 0 014 4v1h-2z"/>
+                            </svg>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 5.636c-.73.323-1.515.54-2.336.639.84-.502 1.487-1.295 1.788-2.243-.786.466-1.65.805-2.572.985-.74-.785-1.8-1.28-2.98-1.28-2.253 0-4.08 1.827-4.08 4.082 0 .32.038.633.114.935-3.39-.17-6.4-1.8-8.418-4.28-.352.605-.553 1.31-.553 2.064 0 1.424.727 2.68 1.832 3.41-.675-.022-1.308-.207-1.867-.518v.052c0 1.989 1.409 3.642 3.273 4.018-.34.092-.698.14-1.061.14-.259 0-.514-.025-.764-.073.516 1.613 2.013 2.79 3.79 2.82-1.39 1.088-3.14 1.737-5.033 1.737-.327 0-.651-.017-.968-.058 1.81 1.16 3.95 1.834 6.264 1.834 7.522 0 11.631-6.26 11.631-11.678 0-.178-.004-.355-.012-.53.8-.575 1.495-1.295 2.043-2.115z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5.09a6.91 6.91 0 100 13.82 6.91 6.91 0 000-13.82zm0 10.78a3.87 3.87 0 110-7.74 3.87 3.87 0 010 7.74zm4.07-8.21a1.07 1.07 0 100-2.14 1.07 1.07 0 000 2.14zM12 3.16a8.84 8.84 0 00-8.84 8.84v9.04a8.84 8.84 0 008.84 8.84h9.04a8.84 8.84 0 008.84-8.84V12.00a8.84 8.84 0 00-8.84-8.84H12z"/>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3zm0-1a1 1 0 00-1 1v18a1 1 0 001 1h18a1 1 0 001-1V3a1 1 0 00-1-1H3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-gray-400 text-sm">&copy; 2024 Your Restaurant. All rights reserved.</p>
+                
+            </div>
+            
+        </div>
+    </footer>
+    
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Function to open the mobile menu
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full'); // Slide the menu into view
+    });
+
+    // Function to close the mobile menu
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full'); // Slide the menu out of view
+    });
+
+
+    // Testimonial scroll function start
+
+
+    const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 5000,
+    },
+  });
+
+// Testimonial scroll function end
+
+
+</script>
+</body>
+</html>
